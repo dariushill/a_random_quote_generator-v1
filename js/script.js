@@ -2,7 +2,7 @@
 //array of objects
 
 var quotes = [
-  {quote:"You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face. You are able to say to yourself, 'I lived through this horror. I can take the next thing that comes along.'", source: "Elearnor Rooevelt" , citation: "Speech", year:"1962", tags: "Strength quote"},
+  {quote:"You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face. You are able to say to yourself, 'I lived through this horror. I can take the next thing that comes along.'", source: "Eleanor Rooevelt" , citation: "Speech", year:"1962", tags: "Strength quote"},
   {quote:"Strength and growth come only through continuous effort and struggle.", source: "Napoleon Hill", citation: "speech", year:"1970", tags: "strength quote"},
   {quote:"Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender, that is strength.", source: "Arnold Schwarzenegger", citation: "Speech", year:"1990", tags: "Strength quote"},
   {quote:"Great works are performed not by strength but by perseverance.", source: "Samuel Johnson", citation: "Speech", year:" 1784", tags: "Strength quote"},
@@ -24,7 +24,7 @@ function getRandomQuote () {
 // print function
 function printQuote () {
 
-  setTimeout(printQuote, 1000); // random quote/color time set. 1 sec
+  setTimeout(printQuote, 7000); // random quote/color time set. 1 sec
    var x = colorGenerator();
    var y = colorGenerator();
    var z = colorGenerator();
@@ -53,5 +53,7 @@ function printQuote () {
     document.getElementById('quote-box').innerHTML = html; // print html string
     document.body.style.backgroundColor = color; // print random color
   }
+
+  printQuote ();
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
