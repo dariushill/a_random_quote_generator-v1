@@ -9,28 +9,40 @@ const quotes = [
   {quote:"I like criticism. It makes you strong.", source: "LeBron James", citation: " Speech", year:"2016", tags: "Strength Quote"}
 ];
 
-
 //random qute function
 const getRandomQuote =  () =>  {
   let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]; // random quote expression
   return randomQuote;
-}
+};
 
 // random color function
  const colorGenerator = () => {
   return randomColor = Math.floor(Math.random() * 256); // random quote expression
  }
 
+ function interval () {
+   setInterval(printQuote, 7000);
+ }
+ const button = document.getElementById('loadQuote');
 
-const printQuote = () => {
+ button.addEventListener('mouseover', () => {
+   button.textContent = button.textContent.toUpperCase();
+   button.style.background ='red';
+ });
 
-  setTimeout(printQuote, 9000);
+ button.addEventListener('mouseout', () => {
+   button.textContent = button.textContent.toLowerCase()
+   button.style.background ='#36b55c';
+ });
 
-    // random color variables
+function printQuote () {
+
+  // random color variables
    let x = colorGenerator();
    let y = colorGenerator();
    let z = colorGenerator();
    let color = "rgb(" + x + "," + y + "," + z + ")";
+
 
   let generateRandomQuote = getRandomQuote(); // random number function stored in variable
   let html = ''; // empty html variable string
@@ -57,6 +69,7 @@ const printQuote = () => {
 
   }
 
+  interval();
   printQuote ();
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
